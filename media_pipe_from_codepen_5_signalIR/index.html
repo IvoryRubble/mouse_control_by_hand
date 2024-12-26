@@ -1,0 +1,73 @@
+<link href="material-components-web.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css" rel="stylesheet" />
+<link href="controls/toggle/style.css" rel="stylesheet">
+<link href="controls/slider/style.css" rel="stylesheet">
+
+<h3>Palm control</h3>
+
+<section id="demos" class="invisible1 invisible2">
+  <div class="controls-area">
+    <div class="toggle-container">
+      <input type="checkbox" id="recognitionCheckBox" class="toggle">
+      <label for="recognitionCheckBox" class="label">
+        <div class="ball"></div>
+      </label>
+      <span>Recognition</span>
+    </div>
+  
+    <div class="toggle-container">
+      <input type="checkbox" id="inputControlCheckBox" class="toggle">
+      <label for="inputControlCheckBox" class="label">
+        <div class="ball"></div>
+      </label>
+      <span>Control input</span>
+    </div>
+  
+    <div class="slidecontainer_outer">
+      <label class="slider_label" for="numHands">numHands</label>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="numHands">
+        <p class="slider_value"><span id="numHands_value"></span></p>
+      </div>
+    </div>
+  
+    <div class="slidecontainer_outer">
+      <label class="slider_label" for="minHandDetectionConfidence">minHandDetectionConfidence</label>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="99" value="50" step="1" class="slider" id="minHandDetectionConfidence">
+        <p class="slider_value"><span id="minHandDetectionConfidence_value"></span></p>
+      </div>
+    </div>
+  
+    <div class="slidecontainer_outer">
+      <label class="slider_label" for="minHandPresenceConfidence">minHandPresenceConfidence</label>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="99" value="50" step="1" class="slider" id="minHandPresenceConfidence">
+        <p class="slider_value"><span id="minHandPresenceConfidence_value"></span></p>
+      </div>
+    </div>
+  
+    <div class="slidecontainer_outer">
+      <label class="slider_label" for="minTrackingConfidence">minTrackingConfidence</label>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="99" value="50" step="1" class="slider" id="minTrackingConfidence">
+        <p class="slider_value"><span id="minTrackingConfidence_value"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="liveView" class="videoView">
+    <div style="position: relative;">
+      <video id="webcam" autoplay playsinline></video>
+      <canvas class="output_canvas" id="output_canvas" width="1280" height="720"
+        style="position: absolute; left: 0px; top: 0px;"></canvas>
+      <p id='gesture_output_custom' class="output">
+      <p id='gesture_output' class="output">
+    </div>
+  </div>
+</section>
+
+<script src="controls/slider/script.js"></script>
+<script src="material-components-web.min.js"></script>
+<script src="node_modules/@microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="script.js" id="rendered-js" type="module"></script>
